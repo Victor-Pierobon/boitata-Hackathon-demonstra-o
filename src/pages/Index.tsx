@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import Header from '@/components/Header';
+import MapView from '@/components/MapView';
+import Dashboard from '@/components/Dashboard';
+import About from '@/components/About';
+import Contact from '@/components/Contact';
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState('mapa');
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'mapa':
+        return <MapView />;
+      case 'dashboard':
+        return <Dashboard />;
+      case 'sobre':
+        return <About />;
+      case 'contato':
+        return <Contact />;
+      default:
+        return <MapView />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-boitata">
+      <Header activeTab={activeTab} onTabChange={setActiveTab} />
+      {renderContent()}
     </div>
   );
 };

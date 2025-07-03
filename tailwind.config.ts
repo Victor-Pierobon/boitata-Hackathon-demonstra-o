@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cores customizadas do Boitatá
+				boitata: {
+					verde: '#3E8E41',
+					laranja: '#F05A28',
+					cinza: '#5E5E5E',
+					terra: '#8C4A2F',
+					azul: '#1E3A5F',
+					dourado: '#FFD166',
+					ciano: '#00D4AA',
+					escuro: '#0F1419'
 				}
 			},
 			borderRadius: {
@@ -84,11 +96,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-fire': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.1)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-fire': 'pulse-fire 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-boitata': 'linear-gradient(135deg, #1E3A5F 0%, #0F1419 50%, #3E8E41 100%)',
+				'gradient-fire': 'linear-gradient(45deg, #F05A28 0%, #FFD166 100%)',
+				'gradient-safe': 'linear-gradient(45deg, #3E8E41 0%, #00D4AA 100%)'
 			}
 		}
 	},
